@@ -16,7 +16,7 @@ export default function decorate(block) {
       else div.className = 'cards-card-body';
     });
     const more = document.createElement('div');
-    more.classList.add("more")
+    more.classList.add('more');
     more.innerHTML = placeholders.more;
     li.append(more);
     ul.append(li);
