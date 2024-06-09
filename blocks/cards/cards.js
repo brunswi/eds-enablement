@@ -1,4 +1,9 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
+import {
+  createOptimizedPicture,
+  fetchPlaceholders,
+} from '../../scripts/aem.js';
+
+const placeholders = await fetchPlaceholders();
 
 export default function decorate(block) {
   /* change to ul, li */
@@ -10,6 +15,10 @@ export default function decorate(block) {
       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-card-image';
       else div.className = 'cards-card-body';
     });
+    const more = document.createElement('div');
+    more.classList.add('more');
+    more.innerHTML = placeholders.more;
+    li.append(more);
     ul.append(li);
   });
   ul.querySelectorAll('img').forEach((img) => img.closest('picture').replaceWith(createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }])));
