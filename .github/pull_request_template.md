@@ -2,6 +2,6 @@ Please always provide the [GitHub issue(s)](../issues) your PR is for, as well a
 
 Fix #<gh-issue-id>
 
-Test URLs:
-- Before: https://main--eds-enablement-1--brunswi.hlx.live/
-- After: https://<branch>--eds-enablement-1--brunswi.hlx.live/
+URL for testing:
+
+- https://develop--eds-enablement--brunswi.hlx.page/
