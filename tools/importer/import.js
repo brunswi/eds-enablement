@@ -23,12 +23,12 @@ export default {
    * @returns {HTMLElement} The root element to be transformed
    */
   transformDOM: ({
-                   // eslint-disable-next-line no-unused-vars
-                   document, url, html, params,
-                 }) => {
+    // eslint-disable-next-line no-unused-vars
+    document, url, html, params,
+  }) => {
     // define the main element: the one that will be transformed to Markdown
     const main = document.body;
-    main.querySelectorAll('a').forEach(el => el.remove())
+    main.querySelectorAll('a').forEach((el) => el.remove());
 
     // attempt to remove non-content elements
     WebImporter.DOMUtils.remove(main, [
@@ -39,7 +39,7 @@ export default {
       'footer',
       '.footer',
       'iframe',
-      'noscript'
+      'noscript',
     ]);
 
     WebImporter.rules.createMetadata(main, document);
@@ -60,9 +60,9 @@ export default {
    * @return {string} The path
    */
   generateDocumentPath: ({
-                           // eslint-disable-next-line no-unused-vars
-                           document, url, html, params,
-                         }) => {
+    // eslint-disable-next-line no-unused-vars
+    document, url, html, params,
+  }) => {
     let p = new URL(url).pathname;
     if (p.endsWith('/')) {
       p = `${p}index`;
